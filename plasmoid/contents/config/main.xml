@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+	<kcfgfile name=""/>
+	<group name="General">
+		<entry name="notifyCommand" type="String">
+			<label>Notifiy command</label>
+			<default>bash -c "notify-send -i {{ICON}} 'Software' '{{TEXT}}'"</default>
+		</entry>
+		<entry name="refreshListCommand" type="String">
+			<label>Refresh list command</label>
+			<default>bash -c "paste -d';' &lt;(pacman -Qu | sed 's/\ /;/' | sed -r 's/->.*//') &lt;(pacman -Qui | grep Description | sed 's/^Description[ \t:]*//')"</default>
+		</entry>
+		<entry name="updateSystemCommand" type="String">
+			<label>Update system command</label>
+			<default>octopi -sysupgrade</default>
+		</entry>
+		<entry name="openSoftwareCenterCommand" type="String">
+			<label>Open software center command</label>
+			<default>octopi</default>
+		</entry>
+		<entry name="refreshInterval" type="Int">
+			<label>Refresh interval</label>
+			<default>60</default>
+		</entry>
+	</group>
+	<group name="UI">
+		<entry name="refreshListIcon" type="String">
+			<label>Refresh icon</label>
+			<default>view-refresh</default>
+		</entry>
+		<entry name="updateSystemIcon" type="String">
+			<label>Update icon</label>
+			<default>arrow-up</default>
+		</entry>
+		<entry name="openSoftwareCenterIcon" type="String">
+			<label>Open icon</label>
+			<default>applications-other</default>
+		</entry>
+		<entry name="notifyUpdatesAvailableIcon" type="String">
+			<label>Updates available icon</label>
+			<default>computer</default>
+		</entry>
+	</group>
+</kcfg>
