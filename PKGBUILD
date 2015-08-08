@@ -10,7 +10,6 @@ depends=('plasma-framework')
 makedepends=('git' 'extra-cmake-modules')
 conflicts=("${pkgname%-*}")
 provides=("${pkgname%-*}")
-install=${pkgname%-*}.install
 source=('git://github.com/NousDev/updatenotifier.git')
 md5sums=('SKIP')
 
