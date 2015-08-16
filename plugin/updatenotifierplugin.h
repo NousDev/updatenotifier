@@ -32,7 +32,7 @@ public slots:
         callback.call(QJSValueList { jsValue });
 
         _Processes.remove(sender);
-        sender.deleteLater();
+        sender->deleteLater();
     };
 };
 
