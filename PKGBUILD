@@ -1,12 +1,12 @@
 pkgname=kdeplasma-applets-updatenotifier-git
 _pkgname=updatenotifier
-pkgver=1.0.0
+pkgver=r9.f643812
 pkgrel=1
 pkgdesc="Update notification plasmoid for Plasma 5."
 arch=('i686' 'x86_64')
 url="https://github.com/NousDev/updatenotifier"
 license=('GPL')
-depends=('plasma-framework')
+depends=('plasma-framework' 'packagekit')
 makedepends=('git' 'extra-cmake-modules')
 conflicts=("${pkgname%-*}")
 provides=("${pkgname%-*}")
