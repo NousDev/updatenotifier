@@ -2,22 +2,6 @@
 <kcfg xmlns="http://www.kde.org/standards/kcfg/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
 	<kcfgfile name=""/>
 	<group name="General">
-		<entry name="notifyCommand" type="String">
-			<label>Notifiy command</label>
-			<default>bash -c "notify-send -i {{ICON}} 'Software' '{{TEXT}}'"</default>
-		</entry>
-		<entry name="refreshListCommand" type="String">
-			<label>Refresh list command</label>
-			<default>bash -c "paste -d';' &lt;(pacman -Qu | sed 's/\ /;/' | sed -r 's/->.*//') &lt;(pacman -Qui | grep Description | sed 's/^Description[ \t:]*//')"</default>
-		</entry>
-		<entry name="updateSystemCommand" type="String">
-			<label>Update system command</label>
-			<default>octopi -sysupgrade</default>
-		</entry>
-		<entry name="openSoftwareCenterCommand" type="String">
-			<label>Open software center command</label>
-			<default>octopi</default>
-		</entry>
 		<entry name="refreshInterval" type="Int">
 			<label>Refresh interval</label>
 			<default>60</default>
@@ -39,6 +23,24 @@
 		<entry name="notifyUpdatesAvailableIcon" type="String">
 			<label>Updates available icon</label>
 			<default>computer</default>
+		</entry>
+	</group>
+	<group name="Backend">
+		<entry name="notifyCommand" type="String">
+			<label>Notifiy command</label>
+			<default>bash -c "notify-send -i {{ICON}} 'Software' '{{TEXT}}'"</default>
+		</entry>
+		<entry name="refreshListCommand" type="String">
+			<label>Refresh list command</label>
+			<default>bash -c "pkcon refresh &gt;/dev/null ; paste -d';' &lt;(pacman -Qu | sed 's/\ /;/' | sed -r 's/->.*//') &lt;(pacman -Qui | grep Description | sed 's/^Description[ \t:]*//')"</default>
+		</entry>
+		<entry name="updateSystemCommand" type="String">
+			<label>Update system command</label>
+			<default>pkcon update</default>
+		</entry>
+		<entry name="openSoftwareCenterCommand" type="String">
+			<label>Open software center command</label>
+			<default>octopi</default>
 		</entry>
 	</group>
 </kcfg>
