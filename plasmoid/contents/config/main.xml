@@ -36,7 +36,7 @@
 		</entry>
 		<entry name="updateSystemCommand" type="String">
 			<label>Update system command</label>
-			<default>pkcon update</default>
+			<default>pkcon update -y</default>
 		</entry>
 		<entry name="openSoftwareCenterCommand" type="String">
 			<label>Open software center command</label>
